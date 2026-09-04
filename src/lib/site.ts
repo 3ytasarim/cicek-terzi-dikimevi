@@ -21,10 +21,11 @@ export const MAPS_EMBED =
   "&output=embed";
 
 export const NAV_LINKS = [
-  { label: "Ana Sayfa", href: "#ana-sayfa" },
-  { label: "Hakkımızda", href: "#hakkimizda" },
-  { label: "Hizmetlerimiz", href: "#hizmetler" },
-  { label: "Nasıl Çalışıyoruz?", href: "#nasil-calisiyoruz" },
-  { label: "Sık Sorulan Sorular", href: "#sss" },
-  { label: "İletişim", href: "#iletisim" },
-];
+  { label: "Ana Sayfa", to: "/" },
+  { label: "Hakkımızda", to: "/hakkimizda" },
+  { label: "Hizmetlerimiz", to: "/hizmetler" },
+  { label: "Galeri", to: "/galeri" },
+  { label: "Nasıl Çalışıyoruz?", to: "/nasil-calisiyoruz" },
+  { label: "Sık Sorulan Sorular", to: "/sss" },
+  { label: "İletişim", to: "/iletisim" },
+] as const;
