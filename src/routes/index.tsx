@@ -53,6 +53,7 @@ function Index() {
       <Services />
       <VideoGallery limit={3} title="Çalışmalarımızdan Videolar" />
       <WhyUs />
+      <Testimonials />
       <CtaBanner />
     </>
   );
