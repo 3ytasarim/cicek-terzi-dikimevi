@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Ruler, Scissors } from "lucide-react";
 
 import heroAsset from "@/assets/hero-terzi.webp.asset.json";
 const heroImg = heroAsset.url;
@@ -57,6 +57,21 @@ export function Hero() {
             height={1350}
             className="h-[380px] w-full rounded-md object-cover object-top shadow-lift sm:h-[500px] lg:h-[620px]"
           />
+          {/* Terzi ikonları — sol üst */}
+          <div
+            className="terzi-bob absolute left-2 top-2 grid h-11 w-11 place-items-center rounded-full border border-primary/20 bg-background/90 text-primary shadow-lift backdrop-blur sm:left-4 sm:top-4 sm:h-14 sm:w-14"
+            aria-hidden="true"
+          >
+            <Scissors className="h-5 w-5 sm:h-7 sm:w-7" strokeWidth={1.6} />
+          </div>
+          {/* Terzi ikonları — sağ alt */}
+          <div
+            className="terzi-bob absolute bottom-2 right-2 grid h-11 w-11 place-items-center rounded-full border border-primary/20 bg-background/90 text-primary shadow-lift backdrop-blur sm:bottom-4 sm:right-4 sm:h-14 sm:w-14"
+            style={{ animationDelay: "1.2s" }}
+            aria-hidden="true"
+          >
+            <Ruler className="h-5 w-5 sm:h-7 sm:w-7" strokeWidth={1.6} />
+          </div>
         </Reveal>
       </div>
     </section>

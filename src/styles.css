@@ -122,6 +122,15 @@
   background-size: 14px 14px;
 }
 
+@keyframes terzi-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@utility terzi-bob {
+  animation: terzi-bob 3.4s ease-in-out infinite;
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(22px);
