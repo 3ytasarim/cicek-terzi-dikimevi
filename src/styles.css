@@ -250,4 +250,14 @@
   html {
     scroll-behavior: auto;
   }
+
+  .fabric-surface::before,
+  .fabric-surface::after,
+  .heading-bar,
+  .heading-shine,
+  .terzi-bob,
+  .cta-ring,
+  .cta-wiggle {
+    animation: none !important;
+  }
 }
