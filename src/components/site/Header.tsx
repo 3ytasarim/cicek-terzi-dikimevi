@@ -113,46 +113,109 @@ export function Header() {
         </div>
       </div>
 
-      {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-4 py-2 sm:px-6" aria-label="Mobil menü">
-            {NAV_LINKS.map((link) => (
-              <div key={link.to} className="border-b border-border/60 last:border-0">
-                <Link
-                  to={link.to}
-                  onClick={() => setOpen(false)}
+      {/* Mobil menü paneli */}
+      <div
+        className={cn(
+          "fixed inset-0 top-16 z-40 lg:hidden sm:top-20",
+          open ? "pointer-events-auto" : "pointer-events-none",
+        )}
+        aria-hidden={!open}
+      >
+        {/* Karartma */}
+        <button
+          type="button"
+          tabIndex={-1}
+          aria-label="Menüyü kapat"
+          onClick={() => setOpen(false)}
+          className={cn(
+            "absolute inset-0 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300",
+            open ? "opacity-100" : "opacity-0",
+          )}
+        />
+
+        <nav
+          aria-label="Mobil menü"
+          className={cn(
+            "absolute inset-x-0 top-0 max-h-[calc(100vh-4rem)] overflow-y-auto rounded-b-2xl border-b border-border bg-background shadow-lift transition-all duration-300 ease-out sm:max-h-[calc(100vh-5rem)]",
+            open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
+          )}
+        >
+          <div className="px-5 pb-6 pt-5">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              Menü
+            </p>
+
+            <ul className="mt-4 space-y-1.5">
+              {NAV_LINKS.map((link, i) => (
+                <li
+                  key={link.to}
+                  style={{ transitionDelay: open ? `${80 + i * 45}ms` : "0ms" }}
                   className={cn(
-                    "py-3 text-sm font-medium",
-                    isActive(link.to) ? "text-primary" : "text-foreground/80",
+                    "transition-all duration-300 ease-out",
+                    open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
                   )}
                 >
-                  {link.label}
-                </Link>
-                {link.children?.map((child) => (
                   <Link
-                    key={child.to}
-                    to={child.to}
+                    to={link.to}
                     onClick={() => setOpen(false)}
-                    className="block py-2.5 pl-4 text-sm text-foreground/70 hover:text-primary"
+                    className={cn(
+                      "group flex items-center justify-between gap-3 rounded-xl border px-4 py-3.5 transition-colors",
+                      isActive(link.to)
+                        ? "border-primary/30 bg-accent text-primary"
+                        : "border-border/60 bg-card text-foreground/85 hover:border-primary/25 hover:bg-linen",
+                    )}
                   >
-                    {child.label}
+                    <span className="font-display text-lg leading-none">{link.label}</span>
+                    <ChevronRight
+                      className="h-4 w-4 shrink-0 text-primary/60 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
                   </Link>
-                ))}
-              </div>
-            ))}
-            <div className="flex flex-col gap-2 py-4">
-              <WhatsAppLink />
+
+                  {link.children && (
+                    <ul className="mt-1.5 space-y-1 pl-3">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <Link
+                            to={child.to}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm transition-colors",
+                              isActive(child.to)
+                                ? "bg-accent/70 text-primary"
+                                : "text-muted-foreground hover:bg-linen hover:text-primary",
+                            )}
+                          >
+                            <span className="h-px w-4 shrink-0 bg-primary/40" aria-hidden="true" />
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 space-y-2.5 border-t border-border/70 pt-5">
+              <WhatsAppLink className="w-full justify-center" />
               <a
                 href={PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/30 px-5 py-3 text-sm font-semibold text-primary"
+                className="flex w-full items-center justify-center gap-2 rounded-md border border-primary/30 px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-accent"
               >
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>
+              <p className="pt-2 text-center text-xs leading-relaxed text-muted-foreground">
+                {ADDRESS_LINE_1}
+                <br />
+                {ADDRESS_LINE_2}
+              </p>
             </div>
-          </nav>
-        </div>
-      )}
+          </div>
+        </nav>
+      </div>
+
     </header>
   );
 }
