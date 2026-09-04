@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 
-import heroImg from "@/assets/hero-atolye.jpg";
+import heroAsset from "@/assets/hero-terzi.webp.asset.json";
+const heroImg = heroAsset.url;
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
 
@@ -51,10 +52,10 @@ export function Hero() {
           <div className="fabric-surface absolute -inset-3 -z-10 rounded-lg sm:-inset-5" aria-hidden="true" />
           <img
             src={heroImg}
-            alt="Çiçek Terzi atölyesinde ceket provası yapan terzi"
-            width={1408}
-            height={1760}
-            className="h-[380px] w-full rounded-md object-cover shadow-lift sm:h-[500px] lg:h-[620px]"
+            alt="Çiçek Terzi atölyesinde kumaş kesen kadın terzi"
+            width={1080}
+            height={1350}
+            className="h-[380px] w-full rounded-md object-cover object-top shadow-lift sm:h-[500px] lg:h-[620px]"
           />
         </Reveal>
       </div>
