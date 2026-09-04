@@ -1,6 +1,5 @@
 import { Handshake, Ruler, ScanSearch, Store } from "lucide-react";
 import dukkan from "@/assets/dukkan.png.asset.json";
-import detay from "@/assets/galeri-detay.jpg";
 import { Reveal } from "./Reveal";
 
 const FEATURES = [
@@ -22,14 +21,6 @@ export function About() {
             height={1130}
             loading="lazy"
             className="h-[320px] w-full rounded-md object-cover shadow-soft sm:h-[440px] lg:h-[520px]"
-          />
-          <img
-            src={detay}
-            alt="Ceket yakasında el işçiliği detayı"
-            width={1200}
-            height={912}
-            loading="lazy"
-            className="absolute -bottom-8 right-4 hidden h-40 w-56 rounded-md border-4 border-background object-cover shadow-lift lg:block"
           />
         </Reveal>
 
