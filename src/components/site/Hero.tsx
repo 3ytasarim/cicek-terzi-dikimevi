@@ -5,12 +5,14 @@ import heroAsset from "@/assets/hero-terzi.webp.asset.json";
 const heroImg = heroAsset.url;
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
+import { FloatingTailorIcons } from "./FloatingTailorIcons";
 
 const TRUST = ["Özel Dikim", "Tadilat & Onarım", "Kadın & Erkek", "Tuzla / İstanbul"];
 
 export function Hero() {
   return (
     <section id="ana-sayfa" className="relative overflow-hidden pt-24 sm:pt-28 lg:pt-32">
+      <FloatingTailorIcons />
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
         <div>
           <Reveal>
