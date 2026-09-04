@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
+
 import heroImg from "@/assets/hero-atolye.jpg";
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
@@ -23,13 +25,14 @@ export function Hero() {
 
           <Reveal delay={120} className="mt-8 flex flex-col gap-3 sm:flex-row">
             <WhatsAppLink className="px-6 py-3.5">WhatsApp'tan Bilgi Al</WhatsAppLink>
-            <a
-              href="#hizmetler"
+            <Link
+              to="/hizmetler"
               className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/25 px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent"
             >
               Hizmetleri İncele
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+            </Link>
+
           </Reveal>
 
           <Reveal delay={200}>
