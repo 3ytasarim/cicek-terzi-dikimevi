@@ -50,7 +50,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={150} className="relative">
+        <Reveal delay={150} className="relative z-20">
           <div className="fabric-surface absolute -inset-3 -z-10 rounded-lg sm:-inset-5" aria-hidden="true" />
           <img
             src={heroImg}
