@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
 import { NAV_LINKS, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 import { WhatsAppLink } from "./WhatsAppButton";
@@ -22,6 +22,9 @@ export function Header() {
     setOpen(false);
   }, [pathname]);
 
+  const isActive = (to: string) =>
+    to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(to + "/");
+
   return (
     <header
       className={cn(
@@ -38,24 +41,55 @@ export function Header() {
             alt="Çiçek Terzi logosu"
             width={112}
             height={75}
-            className="h-9 w-auto shrink-0 sm:h-12"
+            className="h-11 w-auto shrink-0 sm:h-14"
           />
           <span className="sr-only">Çiçek Terzi</span>
         </Link>
 
         <nav className="ml-auto hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Ana menü">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={cn(
-                "text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
-                pathname === link.to ? "text-primary" : "text-foreground/80",
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.children ? (
+              <div key={link.to} className="group relative">
+                <Link
+                  to={link.to}
+                  className={cn(
+                    "inline-flex items-center gap-1 text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
+                    isActive(link.to) ? "text-primary" : "text-foreground/80",
+                  )}
+                >
+                  {link.label}
+                  <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden="true" />
+                </Link>
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="min-w-52 overflow-hidden rounded-lg border border-border bg-background/95 shadow-lift backdrop-blur">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.to}
+                        to={child.to}
+                        className={cn(
+                          "block px-4 py-2.5 text-sm font-medium transition-colors hover:bg-linen hover:text-primary",
+                          isActive(child.to) ? "text-primary" : "text-foreground/80",
+                        )}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={cn(
+                  "text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
+                  isActive(link.to) ? "text-primary" : "text-foreground/80",
+                )}
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
@@ -83,14 +117,28 @@ export function Header() {
         <div className="border-t border-border bg-background lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-4 py-2 sm:px-6" aria-label="Mobil menü">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 text-sm font-medium last:border-0"
-              >
-                {link.label}
-              </Link>
+              <div key={link.to} className="border-b border-border/60 last:border-0">
+                <Link
+                  to={link.to}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "py-3 text-sm font-medium",
+                    isActive(link.to) ? "text-primary" : "text-foreground/80",
+                  )}
+                >
+                  {link.label}
+                </Link>
+                {link.children?.map((child) => (
+                  <Link
+                    key={child.to}
+                    to={child.to}
+                    onClick={() => setOpen(false)}
+                    className="block py-2.5 pl-4 text-sm text-foreground/70 hover:text-primary"
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
             ))}
             <div className="flex flex-col gap-2 py-4">
               <WhatsAppLink />
