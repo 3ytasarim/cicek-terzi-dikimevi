@@ -10,13 +10,14 @@ import {
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-import abiyeImg from "@/assets/media/ozel-dikim-abiye.jpg.asset.json";
-import tadilatImg from "@/assets/media/tadilat-dikim.jpg.asset.json";
-import finalImg from "@/assets/media/final-prova.jpg.asset.json";
-import dikisImg from "@/assets/media/dikis-atolye.jpg.asset.json";
-import modaeviImg from "@/assets/media/modaevi-tasarim.jpg.asset.json";
-import yeniImg from "@/assets/media/yeni-tasarim.jpg.asset.json";
-import egeImg from "@/assets/media/ege-salvari.jpg.asset.json";
+import imgOzelDikim from "@/assets/hizmet-ozel-dikim.jpg";
+import imgPaca from "@/assets/hizmet-paca.jpg";
+import imgDaraltma from "@/assets/hizmet-daraltma.jpg";
+import imgTadilat from "@/assets/hizmet-tadilat.jpg";
+import imgFermuar from "@/assets/hizmet-fermuar.jpg";
+import imgAbiye from "@/assets/hizmet-abiye.jpg";
+import imgCeket from "@/assets/hizmet-ceket.jpg";
+import imgOlcu from "@/assets/hizmet-olcu.jpg";
 
 const SERVICES = [
   {
@@ -24,56 +25,56 @@ const SERVICES = [
     icon: Scissors,
     title: "Özel Dikim",
     text: "Bedeninize, tarzınıza ve kullanım amacınıza uygun kişiye özel dikim.",
-    image: abiyeImg.url,
+    image: imgOzelDikim,
   },
   {
     no: "02",
     icon: Ruler,
     title: "Pantolon Paçası & Kısaltma",
     text: "Pantolon ve diğer kıyafetlerde ölçünüze uygun profesyonel kısaltma işlemleri.",
-    image: tadilatImg.url,
+    image: imgPaca,
   },
   {
     no: "03",
     icon: Shapes,
     title: "Daraltma & Genişletme",
     text: "Kıyafetlerin formunu koruyarak bedeninize daha iyi oturmasını sağlıyoruz.",
-    image: finalImg.url,
+    image: imgDaraltma,
   },
   {
     no: "04",
     icon: Wrench,
     title: "Tadilat & Onarım",
     text: "Sökük, yırtık veya kullanıma bağlı hasarları özenli işçilikle yeniliyoruz.",
-    image: dikisImg.url,
+    image: imgTadilat,
   },
   {
     no: "05",
     icon: Layers,
     title: "Fermuar Değişimi",
     text: "Pantolon, etek, elbise, mont ve benzeri ürünlerde fermuar değişimi ve onarımı.",
-    image: tadilatImg.url,
+    image: imgFermuar,
   },
   {
     no: "06",
     icon: Sparkles,
     title: "Elbise & Abiye Tadilatı",
     text: "Elbise ve özel gün kıyafetlerinde hassas ölçü, düzenleme ve tadilat.",
-    image: modaeviImg.url,
+    image: imgAbiye,
   },
   {
     no: "07",
     icon: Shirt,
     title: "Ceket & Takım Elbise Tadilatı",
     text: "Ceket ve takım elbiselerde beden uyumu, kol ve boy düzenlemeleri.",
-    image: yeniImg.url,
+    image: imgCeket,
   },
   {
     no: "08",
     icon: PencilRuler,
     title: "Ölçüye Göre Düzenleme",
     text: "Kıyafetlerinizi vücut ölçülerinize uygun hale getiriyoruz.",
-    image: egeImg.url,
+    image: imgOlcu,
   },
 ];
 
@@ -96,6 +97,8 @@ export function Services() {
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
+                    width={1024}
+                    height={768}
                     className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
