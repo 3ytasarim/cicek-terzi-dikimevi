@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
-import { NAV_LINKS, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
+import { ADDRESS_LINE_1, ADDRESS_LINE_2, NAV_LINKS, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
+
 import { WhatsAppLink } from "./WhatsAppButton";
 import { cn } from "@/lib/utils";
 
