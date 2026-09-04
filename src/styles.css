@@ -89,6 +89,12 @@
     overflow-x: hidden;
   }
 
+  /* Açıklama metinleri bir tık daha kalın. */
+  p,
+  li {
+    font-weight: 450;
+  }
+
   h1,
   h2,
   h3,
