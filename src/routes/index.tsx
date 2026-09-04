@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
+import { VideoGallery } from "@/components/site/VideoGallery";
 import { WhyUs } from "@/components/site/WhyUs";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
@@ -49,6 +50,7 @@ function Index() {
     <>
       <Hero />
       <Services />
+      <VideoGallery limit={3} title="Çalışmalarımızdan Videolar" />
       <WhyUs />
       <CtaBanner />
     </>
