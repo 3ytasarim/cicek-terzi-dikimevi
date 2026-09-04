@@ -20,12 +20,24 @@ export const MAPS_EMBED =
   encodeURIComponent("Nuray Sokağı No:4, Aydınlı, 34953 Tuzla/İstanbul") +
   "&output=embed";
 
-export const NAV_LINKS = [
+export type NavChild = { label: string; to: string };
+export type NavLink = {
+  label: string;
+  to: string;
+  children?: NavChild[];
+};
+
+export const NAV_LINKS: NavLink[] = [
   { label: "Ana Sayfa", to: "/" },
-  { label: "Hakkımızda", to: "/hakkimizda" },
+  {
+    label: "Biz Kimiz?",
+    to: "/hakkimizda",
+    children: [
+      { label: "Nasıl Çalışıyoruz?", to: "/nasil-calisiyoruz" },
+      { label: "Sık Sorulan Sorular", to: "/sss" },
+    ],
+  },
   { label: "Hizmetlerimiz", to: "/hizmetler" },
   { label: "Galeri", to: "/galeri" },
-  { label: "Nasıl Çalışıyoruz?", to: "/nasil-calisiyoruz" },
-  { label: "Sık Sorulan Sorular", to: "/sss" },
   { label: "İletişim", to: "/iletisim" },
-] as const;
+];
