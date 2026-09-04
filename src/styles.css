@@ -251,3 +251,21 @@
     animation: none !important;
   }
 }
+
+/* Hero'da alttan yukarıya süzülen terzi ikonları; header'a varmadan kaybolur. */
+@keyframes tailor-float {
+  0% { transform: translate3d(0, 0, 0) rotate(-6deg); opacity: 0; }
+  12% { opacity: 1; }
+  55% { transform: translate3d(14px, -45vh, 0) rotate(6deg); opacity: 1; }
+  88% { opacity: 0; }
+  100% { transform: translate3d(-8px, -95%, 0) rotate(-4deg); opacity: 0; }
+}
+
+@utility tailor-float {
+  animation: tailor-float 18s linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tailor-float { animation: none !important; opacity: 0 !important; }
+}
