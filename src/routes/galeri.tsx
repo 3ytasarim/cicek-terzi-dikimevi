@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { Gallery } from "@/components/site/Gallery";
 import { VideoGallery } from "@/components/site/VideoGallery";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
 const TITLE = "Galeri | Çiçek Terzi Tuzla";
 const DESCRIPTION =
-  "Çiçek Terzi atölyesinden çalışma ve detay fotoğrafları: özel dikim, tadilat, işçilik detayları ve atölye görselleri.";
+  "Çiçek Terzi atölyesinden gerçek çalışma videoları: özel dikim, tadilat ve prova anları.";
 
 export const Route = createFileRoute("/galeri")({
   head: () => ({
@@ -26,10 +25,9 @@ export const Route = createFileRoute("/galeri")({
     <>
       <PageHero
         eyebrow="Galeri"
-        title="Atölyemizden Kareler"
-        description="Çalışmalarımızdan ve atölyemizden seçilmiş görseller."
+        title="Atölyemizden Videolar"
+        description="Atölyemizde çektiğimiz gerçek çalışma videoları."
       />
-      <Gallery />
       <VideoGallery />
       <Testimonials />
       <CtaBanner />
