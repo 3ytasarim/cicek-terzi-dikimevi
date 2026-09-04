@@ -9,6 +9,7 @@ import {
   PencilRuler,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 const SERVICES = [
   {
@@ -65,14 +66,11 @@ export function Services() {
   return (
     <section id="hizmetler" className="fabric-surface py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">Hizmetlerimiz</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Her Kıyafete Usta Dokunuş</h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Günlük tadilatlardan özel dikime kadar kıyafetlerinizi kullanım amacına ve bedeninize
-            uygun şekilde özenle düzenliyoruz.
-          </p>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Hizmetlerimiz"
+          title="Her Kıyafete Usta Dokunuş"
+          description="Günlük tadilatlardan özel dikime kadar kıyafetlerinizi kullanım amacına ve bedeninize uygun şekilde özenle düzenliyoruz."
+        />
 
         <ul className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, i) => (

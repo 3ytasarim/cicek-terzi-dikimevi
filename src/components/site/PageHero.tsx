@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 export function PageHero({
   eyebrow,
@@ -25,14 +26,15 @@ export function PageHero({
             <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
             <span className="text-foreground/70">{eyebrow}</span>
           </nav>
-          <p className="eyebrow mt-6">{eyebrow}</p>
-          <h1 className="mt-3 text-3xl sm:text-5xl lg:text-6xl">{title}</h1>
-          {description && (
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              {description}
-            </p>
-          )}
         </Reveal>
+
+        <SectionHeading
+          as="h1"
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
+          className="mt-6"
+        />
       </div>
     </section>
   );

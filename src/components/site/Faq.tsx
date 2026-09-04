@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 export const FAQ_ITEMS = [
   {
@@ -41,13 +42,11 @@ export function Faq() {
   return (
     <section id="sss" className="py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <Reveal>
-          <p className="eyebrow">Sık Sorulan Sorular</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Merak Edilenler</h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Aradığınız cevabı bulamazsanız WhatsApp üzerinden bize yazabilirsiniz.
-          </p>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Sık Sorulan Sorular"
+          title="Merak Edilenler"
+          description="Aradığınız cevabı bulamazsanız WhatsApp üzerinden bize yazabilirsiniz."
+        />
 
         <Reveal delay={100}>
           <Accordion type="single" collapsible className="w-full">
