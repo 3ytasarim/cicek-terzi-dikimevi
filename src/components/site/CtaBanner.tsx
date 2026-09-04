@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
+import { PHONE_HREF } from "@/lib/site";
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
 
@@ -25,7 +25,6 @@ export function CtaBanner() {
               Hemen Ara
             </a>
           </div>
-          <p className="mt-6 text-sm text-primary-foreground/70">{PHONE_DISPLAY}</p>
         </Reveal>
       </div>
     </section>
