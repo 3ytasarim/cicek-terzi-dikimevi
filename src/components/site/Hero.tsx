@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Ruler, Scissors } from "lucide-react";
 
-import heroAsset from "@/assets/hero-terzi.webp.asset.json";
-const heroImg = heroAsset.url;
+import heroAsset from "@/assets/hero-terzi.webp";
+const heroImg = heroAsset;
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
 import { FloatingTailorIcons } from "./FloatingTailorIcons";

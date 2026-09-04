@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppButton";
 
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import {
   ADDRESS_LINE_1,
   ADDRESS_LINE_2,
@@ -18,7 +18,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3">
         <div>
           <img
-            src={logo.url}
+            src={logo}
             alt="Çiçek Terzi logosu"
             width={140}
             height={94}
