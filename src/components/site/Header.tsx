@@ -47,51 +47,70 @@ export function Header() {
           <span className="sr-only">Çiçek Terzi</span>
         </Link>
 
-        <nav className="hidden items-center justify-center gap-4 lg:flex xl:gap-6" aria-label="Ana menü">
-          {NAV_LINKS.map((link) =>
-            link.children ? (
-              <div key={link.to} className="group relative">
+        <nav
+          className="hidden items-center justify-center lg:flex"
+          aria-label="Ana menü"
+        >
+          <div className="flex items-center gap-1 rounded-full border border-border/70 bg-card/70 p-1.5 shadow-[0_1px_0_hsl(0_0%_100%/0.6)_inset,0_10px_30px_-24px_hsl(0_0%_0%/0.35)] backdrop-blur xl:gap-1.5">
+            {NAV_LINKS.map((link) =>
+              link.children ? (
+                <div key={link.to} className="group relative">
+                  <Link
+                    to={link.to}
+                    className={cn(
+                      "relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 xl:px-4 xl:text-[0.82rem]",
+                      isActive(link.to)
+                        ? "bg-primary text-primary-foreground shadow-lift"
+                        : "text-foreground/75 hover:bg-accent hover:text-primary",
+                    )}
+                  >
+                    {link.label}
+                    <ChevronDown
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                  <div className="invisible absolute left-1/2 top-full -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="min-w-56 overflow-hidden rounded-2xl border border-border/70 bg-background/95 p-1.5 shadow-lift backdrop-blur">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.to}
+                          to={child.to}
+                          className={cn(
+                            "group/item flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors",
+                            isActive(child.to)
+                              ? "bg-accent text-primary"
+                              : "text-foreground/80 hover:bg-linen hover:text-primary",
+                          )}
+                        >
+                          <span
+                            className="h-px w-3 shrink-0 bg-primary/40 transition-all duration-200 group-hover/item:w-5 group-hover/item:bg-primary"
+                            aria-hidden="true"
+                          />
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
                 <Link
+                  key={link.to}
                   to={link.to}
                   className={cn(
-                    "inline-flex items-center gap-1 text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
-                    isActive(link.to) ? "text-primary" : "text-foreground/80",
+                    "relative inline-flex items-center rounded-full px-3.5 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-200 xl:px-4 xl:text-[0.82rem]",
+                    isActive(link.to)
+                      ? "bg-primary text-primary-foreground shadow-lift"
+                      : "text-foreground/75 hover:bg-accent hover:text-primary",
                   )}
                 >
                   {link.label}
-                  <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden="true" />
                 </Link>
-                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  <div className="min-w-52 overflow-hidden rounded-lg border border-border bg-background/95 shadow-lift backdrop-blur">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.to}
-                        to={child.to}
-                        className={cn(
-                          "block px-4 py-2.5 text-sm font-medium transition-colors hover:bg-linen hover:text-primary",
-                          isActive(child.to) ? "text-primary" : "text-foreground/80",
-                        )}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={cn(
-                  "text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
-                  isActive(link.to) ? "text-primary" : "text-foreground/80",
-                )}
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
+              ),
+            )}
+          </div>
         </nav>
+
 
         <div className="flex items-center justify-end gap-3">
           <a
