@@ -29,6 +29,7 @@ export const Route = createFileRoute("/galeri")({
         description="Çalışmalarımızdan ve atölyemizden seçilmiş görseller."
       />
       <Gallery />
+      <VideoGallery />
       <Testimonials />
       <CtaBanner />
     </>
