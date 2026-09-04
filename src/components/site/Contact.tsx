@@ -9,15 +9,13 @@ import {
 } from "@/lib/site";
 import { WhatsAppLink } from "./WhatsAppButton";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 export function Contact() {
   return (
     <section id="iletisim" className="fabric-surface py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">İletişim</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Çiçek Terzi'ye Ulaşın</h2>
-        </Reveal>
+        <SectionHeading eyebrow="İletişim" title="Çiçek Terzi'ye Ulaşın" />
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="rounded-md border border-border bg-card p-6 sm:p-8">

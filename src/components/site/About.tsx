@@ -25,8 +25,16 @@ export function About() {
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="eyebrow">Hakkımızda</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Ustalık Detaylarda Gizlidir.</h2>
+          <p className="flex items-center gap-3">
+            <span
+              className="heading-bar h-px w-10 shrink-0 rounded-full bg-primary/70"
+              aria-hidden="true"
+            />
+            <span className="eyebrow">Hakkımızda</span>
+          </p>
+          <h2 className="heading-shine mt-4 text-3xl leading-[1.08] sm:text-5xl">
+            Ustalık Detaylarda Gizlidir.
+          </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
               Çiçek Terzi olarak kıyafetlerin yalnızca ölçüsünü değiştirmekle kalmıyor, formunu ve

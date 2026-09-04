@@ -1,5 +1,6 @@
 import { Award, MessageCircle, Ruler, Search } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 const ITEMS = [
   {
@@ -28,10 +29,10 @@ export function WhyUs() {
   return (
     <section className="fabric-surface py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">Neden Çiçek Terzi?</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Kıyafetinizi Güvenle Teslim Edin.</h2>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Neden Çiçek Terzi?"
+          title="Kıyafetinizi Güvenle Teslim Edin."
+        />
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map((item, i) => (

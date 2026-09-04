@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 const STEPS = [
   {
@@ -22,10 +23,7 @@ export function Process() {
   return (
     <section id="nasil-calisiyoruz" className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">Nasıl Çalışıyoruz?</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">3 Adımda Size Özel</h2>
-        </Reveal>
+        <SectionHeading eyebrow="Nasıl Çalışıyoruz?" title="3 Adımda Size Özel" />
 
         <ol className="relative mt-12 grid gap-8 lg:grid-cols-3 lg:gap-10">
           <div

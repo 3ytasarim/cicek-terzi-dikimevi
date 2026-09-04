@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Play, X } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 import egeV from "@/assets/media/ege-salvari.mp4.asset.json";
 import egeP from "@/assets/media/ege-salvari.jpg.asset.json";
 import abiyeV from "@/assets/media/ozel-dikim-abiye.mp4.asset.json";
@@ -78,14 +79,11 @@ export function VideoGallery({
   return (
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">{eyebrow}</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">{title}</h2>
-          <p className="mt-4 text-foreground/70">
-            Atölyemizde çekilen kısa videolarla dikim ve tadilat sürecimizi
-            yakından izleyebilirsiniz.
-          </p>
-        </Reveal>
+        <SectionHeading
+          eyebrow={eyebrow}
+          title={title}
+          description="Atölyemizde çekilen kısa videolarla dikim ve tadilat sürecimizi yakından izleyebilirsiniz."
+        />
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {clips.map((clip, i) => (
