@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section id="ana-sayfa" className="relative overflow-hidden pt-24 sm:pt-28 lg:pt-32">
       <FloatingTailorIcons />
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
         <div>
           <Reveal>
             <p className="eyebrow">Aydınlı · Tuzla</p>
