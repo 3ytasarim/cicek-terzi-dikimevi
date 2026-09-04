@@ -30,17 +30,15 @@ export function BeforeAfter() {
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: `${value}%` }}>
-                <img
-                  src={oncesi}
-                  alt="Paçası iğnelenmiş ve tebeşirle işaretlenmiş pantolon, beyaz terzi masası üzerinde"
-                  width={1408}
-                  height={1056}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                  style={{ width: "100%", minWidth: "100%" }}
-                />
-              </div>
+              <img
+                src={oncesi}
+                alt="Paçası iğnelenmiş ve tebeşirle işaretlenmiş pantolon, beyaz terzi masası üzerinde"
+                width={1408}
+                height={1056}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}
+              />
               <span className="absolute top-3 left-3 rounded bg-background/85 px-2 py-1 text-[0.68rem] font-semibold tracking-[0.16em] text-primary uppercase">
                 Öncesi
               </span>

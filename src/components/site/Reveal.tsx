@@ -18,6 +18,10 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof IntersectionObserver !== "function") {
+      setVisible(true);
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0]?.isIntersecting) {
@@ -25,11 +29,20 @@ export function Reveal({
           io.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+    // Güvenlik ağı: gözlemci tetiklenmezse içerik yine görünür olsun.
+    const t = window.setTimeout(() => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) setVisible(true);
+    }, 400);
+    return () => {
+      window.clearTimeout(t);
+      io.disconnect();
+    };
   }, []);
+
 
   const Component = Tag as "div";
 

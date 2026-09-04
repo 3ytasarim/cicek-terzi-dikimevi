@@ -43,13 +43,13 @@ export function Header() {
           <span className="sr-only">Çiçek Terzi</span>
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-5 lg:flex" aria-label="Ana menü">
+        <nav className="ml-auto hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Ana menü">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "text-[0.82rem] font-medium whitespace-nowrap transition-colors hover:text-primary xl:text-sm",
                 pathname === link.to ? "text-primary" : "text-foreground/80",
               )}
             >
@@ -61,12 +61,12 @@ export function Header() {
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
           <a
             href={PHONE_HREF}
-            className="hidden items-center gap-2 text-sm font-semibold text-foreground xl:flex"
+            className="hidden items-center gap-2 text-sm font-semibold whitespace-nowrap text-foreground 2xl:flex"
           >
             <Phone className="h-4 w-4 text-primary" aria-hidden="true" />
             {PHONE_DISPLAY}
           </a>
-          <WhatsAppLink className="hidden sm:inline-flex">WhatsApp'tan Yaz</WhatsAppLink>
+          <WhatsAppLink className="hidden whitespace-nowrap sm:inline-flex">WhatsApp'tan Yaz</WhatsAppLink>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

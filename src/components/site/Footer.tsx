@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone } from "lucide-react";
+
 import logo from "@/assets/logo.png.asset.json";
 import {
   ADDRESS_LINE_1,
@@ -30,16 +32,17 @@ export function Footer() {
         <nav aria-label="Alt menü">
           <h2 className="font-display text-lg">Menü</h2>
           <ul className="mt-4 space-y-2">
-            {NAV_LINKS.filter((l) => l.label !== "Nasıl Çalışıyoruz?").map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
+            {NAV_LINKS.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
+
           </ul>
         </nav>
 
