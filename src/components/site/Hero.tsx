@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Ruler, Scissors } from "lucide-react";
 
 import heroAsset from "@/assets/hero-terzi.webp.asset.json";
 const heroImg = heroAsset.url;
