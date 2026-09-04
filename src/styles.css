@@ -275,3 +275,23 @@
 @media (prefers-reduced-motion: reduce) {
   .tailor-float { animation: none !important; opacity: 0 !important; }
 }
+
+/* Yorumlar için sürekli akan (auto) karusel */
+@keyframes review-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@utility review-track {
+  animation: review-marquee var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+}
+
+.review-marquee:hover .review-track,
+.review-marquee:focus-within .review-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-track { animation: none !important; }
+}
