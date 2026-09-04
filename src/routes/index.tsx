@@ -3,6 +3,7 @@ import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
 import { VideoGallery } from "@/components/site/VideoGallery";
 import { WhyUs } from "@/components/site/WhyUs";
+import { Testimonials } from "@/components/site/Testimonials";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
 const TITLE = "Çiçek Terzi | Tuzla Özel Dikim & Tadilat";
