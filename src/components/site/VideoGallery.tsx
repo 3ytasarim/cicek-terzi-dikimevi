@@ -2,20 +2,20 @@ import { useState } from "react";
 import { Play, X } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-import egeV from "@/assets/media/ege-salvari.mp4.asset.json";
-import egeP from "@/assets/media/ege-salvari.jpg.asset.json";
-import abiyeV from "@/assets/media/ozel-dikim-abiye.mp4.asset.json";
-import abiyeP from "@/assets/media/ozel-dikim-abiye.jpg.asset.json";
-import yeniV from "@/assets/media/yeni-tasarim.mp4.asset.json";
-import yeniP from "@/assets/media/yeni-tasarim.jpg.asset.json";
-import dikisV from "@/assets/media/dikis-atolye.mp4.asset.json";
-import dikisP from "@/assets/media/dikis-atolye.jpg.asset.json";
-import tadilatV from "@/assets/media/tadilat-dikim.mp4.asset.json";
-import tadilatP from "@/assets/media/tadilat-dikim.jpg.asset.json";
-import finalV from "@/assets/media/final-prova.mp4.asset.json";
-import finalP from "@/assets/media/final-prova.jpg.asset.json";
-import modaeviV from "@/assets/media/modaevi-tasarim.mp4.asset.json";
-import modaeviP from "@/assets/media/modaevi-tasarim.jpg.asset.json";
+import egeV from "@/assets/media/ege-salvari.mp4";
+import egeP from "@/assets/media/ege-salvari.jpg";
+import abiyeV from "@/assets/media/ozel-dikim-abiye.mp4";
+import abiyeP from "@/assets/media/ozel-dikim-abiye.jpg";
+import yeniV from "@/assets/media/yeni-tasarim.mp4";
+import yeniP from "@/assets/media/yeni-tasarim.jpg";
+import dikisV from "@/assets/media/dikis-atolye.mp4";
+import dikisP from "@/assets/media/dikis-atolye.jpg";
+import tadilatV from "@/assets/media/tadilat-dikim.mp4";
+import tadilatP from "@/assets/media/tadilat-dikim.jpg";
+import finalV from "@/assets/media/final-prova.mp4";
+import finalP from "@/assets/media/final-prova.jpg";
+import modaeviV from "@/assets/media/modaevi-tasarim.mp4";
+import modaeviP from "@/assets/media/modaevi-tasarim.jpg";
 
 type Clip = { title: string; note: string; src: string; poster: string };
 
@@ -23,44 +23,44 @@ export const CLIPS: Clip[] = [
   {
     title: "Ege Şalvarı Dikimi",
     note: "Kumaş seçiminden dikime kadar özel dikim şalvar çalışması",
-    src: egeV.url,
-    poster: egeP.url,
+    src: egeV,
+    poster: egeP,
   },
   {
     title: "Özel Dikim Abiye",
     note: "Ölçüye göre hazırlanan abiye kıyafet dikimi",
-    src: abiyeV.url,
-    poster: abiyeP.url,
+    src: abiyeV,
+    poster: abiyeP,
   },
   {
     title: "Yeni Tasarım",
     note: "Çiçek Terzi atölyesinden yeni tasarım çalışması",
-    src: yeniV.url,
-    poster: yeniP.url,
+    src: yeniV,
+    poster: yeniP,
   },
   {
     title: "Atölyede Dikiş",
     note: "Bay & bayan özel dikim sürecinden kareler",
-    src: dikisV.url,
-    poster: dikisP.url,
+    src: dikisV,
+    poster: dikisP,
   },
   {
     title: "Tadilat & Dikim",
     note: "Kıyafet tadilatı ve ölçü uyarlama çalışması",
-    src: tadilatV.url,
-    poster: tadilatP.url,
+    src: tadilatV,
+    poster: tadilatP,
   },
   {
     title: "Son Prova",
     note: "Tamamlanan çalışmanın son hâli",
-    src: finalV.url,
-    poster: finalP.url,
+    src: finalV,
+    poster: finalP,
   },
   {
     title: "Moda Evi Tasarımı",
     note: "Baştan sona özel tasarım dikim süreci",
-    src: modaeviV.url,
-    poster: modaeviP.url,
+    src: modaeviV,
+    poster: modaeviP,
   },
 ];
 

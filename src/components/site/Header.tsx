@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight, Menu, Phone, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import { ADDRESS_LINE_1, ADDRESS_LINE_2, NAV_LINKS, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 
 import { WhatsAppLink } from "./WhatsAppButton";
@@ -38,7 +38,7 @@ export function Header() {
       <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:h-20 sm:px-6">
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Çiçek Terzi logosu"
             width={112}
             height={75}

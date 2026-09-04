@@ -1,5 +1,5 @@
 import { Handshake, Ruler, ScanSearch, Store } from "lucide-react";
-import dukkan from "@/assets/dukkan.png.asset.json";
+import dukkan from "@/assets/dukkan.png";
 import { Reveal } from "./Reveal";
 
 const FEATURES = [
@@ -15,7 +15,7 @@ export function About() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal className="relative">
           <img
-            src={dukkan.url}
+            src={dukkan}
             alt="Çiçek Terzi'nin Tuzla Aydınlı'daki dükkânı"
             width={1200}
             height={1130}
