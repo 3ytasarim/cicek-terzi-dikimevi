@@ -34,7 +34,7 @@ export function Header() {
           : "border-transparent bg-background/70 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:h-20 sm:px-6">
+      <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:h-20 sm:px-6">
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <img
             src={logo.url}
@@ -46,7 +46,7 @@ export function Header() {
           <span className="sr-only">Çiçek Terzi</span>
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Ana menü">
+        <nav className="hidden items-center justify-center gap-4 lg:flex xl:gap-6" aria-label="Ana menü">
           {NAV_LINKS.map((link) =>
             link.children ? (
               <div key={link.to} className="group relative">
@@ -60,7 +60,7 @@ export function Header() {
                   {link.label}
                   <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden="true" />
                 </Link>
-                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <div className="min-w-52 overflow-hidden rounded-lg border border-border bg-background/95 shadow-lift backdrop-blur">
                     {link.children.map((child) => (
                       <Link
@@ -92,7 +92,7 @@ export function Header() {
           )}
         </nav>
 
-        <div className="ml-auto flex items-center gap-3 lg:ml-0">
+        <div className="flex items-center justify-end gap-3">
           <a
             href={PHONE_HREF}
             className="hidden items-center gap-2 text-sm font-semibold whitespace-nowrap text-foreground 2xl:flex"
