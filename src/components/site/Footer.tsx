@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppButton";
 
 import logo from "@/assets/logo.png.asset.json";
 import {
@@ -68,9 +69,9 @@ export function Footer() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-semibold text-primary"
+                className="inline-flex items-center gap-2 font-semibold text-[#25D366] transition-opacity hover:opacity-80"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
               </a>
             </li>
