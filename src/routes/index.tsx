@@ -49,6 +49,7 @@ function Index() {
     <>
       <Hero />
       <Services />
+      <VideoGallery limit={3} title="Çalışmalarımızdan Videolar" />
       <WhyUs />
       <CtaBanner />
     </>
