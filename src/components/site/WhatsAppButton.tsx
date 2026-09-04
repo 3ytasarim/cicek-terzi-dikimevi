@@ -1,5 +1,5 @@
 import { Phone, X } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL, PHONE_HREF, PHONE_DISPLAY } from "@/lib/site";
 
@@ -59,87 +59,51 @@ export function WhatsAppLink({
 }
 
 export function FloatingWhatsApp() {
-  const [open, setOpen] = useState(false);
-
-  // Close the menu on Escape
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
-
   return (
     <div className="fixed right-4 bottom-6 z-50 flex flex-col items-end gap-3 md:right-6">
-      {/* Expanded action buttons */}
-      <div
-        className={cn(
-          "flex flex-col items-end gap-3 transition-all duration-300",
-          open
-            ? "pointer-events-auto opacity-100 translate-y-0"
-            : "pointer-events-none translate-y-3 opacity-0",
-        )}
+      {/* Arama butonu (üstte) */}
+      <a
+        href={PHONE_HREF}
+        aria-label={`Hemen arayın ${PHONE_DISPLAY}`}
+        className="group cta-pop relative flex items-center"
+        style={{ animationDelay: "0.15s" }}
       >
-        {/* Phone call CTA */}
-        <a
-          href={PHONE_HREF}
-          aria-label="Hemen arayın"
-          className="group flex items-center gap-3 rounded-full bg-foreground py-2 pl-4 pr-2 text-background shadow-lift transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
-          <span className="text-sm font-semibold tracking-wide">
-            Hemen Ara
-          </span>
-          <span className="hidden text-xs text-background/70 group-hover:text-primary-foreground/70 sm:inline">
-            {PHONE_DISPLAY}
-          </span>
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background text-foreground transition-colors group-hover:bg-primary-foreground group-hover:text-primary">
-            <Phone className="h-5 w-5" aria-hidden="true" />
-          </span>
-        </a>
+        <span className="pointer-events-none mr-0 max-w-0 overflow-hidden whitespace-nowrap rounded-full bg-foreground/95 text-sm font-semibold text-background opacity-0 shadow-lift transition-all duration-300 group-hover:mr-2 group-hover:max-w-[220px] group-hover:px-4 group-hover:py-2 group-hover:opacity-100">
+          Hemen Ara · {PHONE_DISPLAY}
+        </span>
+        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift transition-transform duration-300 group-hover:scale-110 md:h-16 md:w-16">
+          <span
+            className="cta-ring absolute inset-0 rounded-full bg-primary"
+            aria-hidden="true"
+          />
+          <Phone className="cta-wiggle relative h-6 w-6 md:h-7 md:w-7" aria-hidden="true" />
+        </span>
+      </a>
 
-        {/* WhatsApp CTA */}
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp üzerinden yazın"
-          className="group flex items-center gap-3 rounded-full bg-[#25D366] py-2 pl-4 pr-2 text-white shadow-lift transition-colors hover:bg-[#1ebe5b]"
-        >
-          <span className="text-sm font-semibold tracking-wide">
-            WhatsApp'tan Yaz
-          </span>
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#25D366] transition-colors group-hover:bg-white/90">
-            <WhatsAppIcon className="h-5 w-5" />
-          </span>
-        </a>
-      </div>
-
-      {/* Toggle FAB */}
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Menüyü kapat" : "İletişim seçeneklerini aç"}
-        aria-expanded={open}
-        className={cn(
-          "flex h-14 w-14 items-center justify-center rounded-full shadow-lift transition-all duration-300 md:h-16 md:w-16",
-          open
-            ? "bg-foreground text-background rotate-90"
-            : "text-white hover:scale-105",
-        )}
-        style={
-          open
-            ? undefined
-            : { backgroundColor: WA_GREEN, color: "#fff" }
-        }
+      {/* WhatsApp butonu (altta) */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp üzerinden yazın"
+        className="group cta-pop relative flex items-center"
+        style={{ animationDelay: "0.3s" }}
       >
-        {open ? (
-          <X className="h-6 w-6" aria-hidden="true" />
-        ) : (
-          <WhatsAppIcon className="h-7 w-7" />
-        )}
-      </button>
+        <span className="pointer-events-none mr-0 max-w-0 overflow-hidden whitespace-nowrap rounded-full bg-foreground/95 text-sm font-semibold text-background opacity-0 shadow-lift transition-all duration-300 group-hover:mr-2 group-hover:max-w-[220px] group-hover:px-4 group-hover:py-2 group-hover:opacity-100">
+          WhatsApp'tan Yaz
+        </span>
+        <span
+          className="relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lift transition-transform duration-300 group-hover:scale-110 md:h-16 md:w-16"
+          style={{ backgroundColor: WA_GREEN }}
+        >
+          <span
+            className="cta-ring absolute inset-0 rounded-full"
+            style={{ backgroundColor: WA_GREEN_DEEP }}
+            aria-hidden="true"
+          />
+          <WhatsAppIcon className="cta-wiggle relative h-7 w-7 md:h-8 md:w-8" />
+        </span>
+      </a>
     </div>
   );
 }
