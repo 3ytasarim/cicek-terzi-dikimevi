@@ -3,6 +3,7 @@ import { MoveHorizontal } from "lucide-react";
 import oncesi from "@/assets/ba-pantolon-oncesi.jpg";
 import sonrasi from "@/assets/ba-pantolon-sonrasi.jpg";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 export function BeforeAfter() {
   const [value, setValue] = useState(50);
@@ -10,14 +11,11 @@ export function BeforeAfter() {
   return (
     <section className="border-y border-border py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">Öncesi & Sonrası</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Doğru Dokunuş Fark Yaratır.</h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Pantolon paçası çalışmasında ölçü alınmış, iğnelenmiş halden ütülenmiş ve tamamlanmış
-            hale geçiş. Çubuğu sürükleyerek karşılaştırabilirsiniz.
-          </p>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Öncesi & Sonrası"
+          title="Doğru Dokunuş Fark Yaratır."
+          description="Pantolon paçası çalışmasında ölçü alınmış, iğnelenmiş halden ütülenmiş ve tamamlanmış hale geçiş. Çubuğu sürükleyerek karşılaştırabilirsiniz."
+        />
 
         <Reveal delay={100} className="mt-10">
           <div className="relative overflow-hidden rounded-md border border-border">
