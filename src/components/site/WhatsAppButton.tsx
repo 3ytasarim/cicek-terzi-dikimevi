@@ -1,5 +1,5 @@
 import { Phone, X } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL, PHONE_HREF, PHONE_DISPLAY } from "@/lib/site";
 
