@@ -23,7 +23,7 @@ export function Footer() {
             width={140}
             height={94}
             loading="lazy"
-            className="h-12 w-auto"
+            className="h-20 w-auto sm:h-24"
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Tuzla'da özel dikim, tadilat ve onarım hizmetleri.
