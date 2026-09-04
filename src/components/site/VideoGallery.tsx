@@ -129,7 +129,7 @@ export function VideoGallery({
           role="dialog"
           aria-modal="true"
           aria-label="Video oynatıcı"
-          className="fixed inset-0 z-60 flex items-center justify-center bg-ink/90 p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/90 p-4"
           onClick={() => setActive(null)}
         >
           <button
