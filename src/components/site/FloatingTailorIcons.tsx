@@ -45,7 +45,7 @@ export function FloatingTailorIcons() {
       {ITEMS.map((item) => (
         <span
           key={item.url + item.left}
-          className="tailor-float absolute bottom-0 block bg-primary/30"
+          className="tailor-float absolute bottom-0 block bg-primary/45 sm:bg-primary/30"
           style={{
             left: `${item.left}%`,
             width: `${item.size}px`,
