@@ -77,6 +77,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Çiçek Terzi",
+  description:
+    "Tuzla Aydınlı'da bay & bayan özel dikim, kıyafet tadilatı ve onarım hizmetleri.",
+  telephone: "+90 534 952 17 59",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Aydınlı, Nuray Sokağı No:4 D:1",
+    addressLocality: "Tuzla",
+    addressRegion: "İstanbul",
+    postalCode: "34953",
+    addressCountry: "TR",
+  },
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
