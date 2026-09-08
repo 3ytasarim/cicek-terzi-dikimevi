@@ -7,4 +7,7 @@
   <url><loc>/nasil-calisiyoruz</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>/sss</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>/iletisim</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/aydinli-terzi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>/ozel-dikim</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>/bayan-terzi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

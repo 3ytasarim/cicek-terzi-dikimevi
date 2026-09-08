@@ -27,6 +27,14 @@ const localBusiness = {
     postalCode: "34953",
     addressCountry: "TR",
   },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
   areaServed: ["Tuzla", "Aydınlı", "Şifa", "Postane", "İstanbul"],
   makesOffer: [
     "Özel dikim",

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ContentSection } from "@/components/site/ContentSection";
+import { ContentSection, type ContentBlock } from "@/components/site/ContentSection";
 import { Process } from "@/components/site/Process";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CtaBanner } from "@/components/site/CtaBanner";
@@ -12,7 +12,7 @@ const DESCRIPTION =
 const KEYWORDS =
   "özel dikim, kişiye özel terzi, özel dikim Tuzla, ölçüye göre dikim, özel dikim elbise, özel dikim abiye, özel dikim pantolon, terzi dikimi İstanbul";
 
-const blocks = [
+const blocks: ContentBlock[] = [
   {
     eyebrow: "Özel Dikim",
     heading: "Ölçünüze Göre, Sıfırdan Dikim",
@@ -88,9 +88,9 @@ export const Route = createFileRoute("/ozel-dikim")({
         title="Kişiye Özel Dikim"
         description="Ölçü, kalıp, prova ve teslim: kıyafetiniz baştan sizin bedeninize göre hazırlanır."
       />
-      <ContentSection block={blocks[0]} />
+      <ContentSection block={blocks[0]!} />
       <Process />
-      <ContentSection block={blocks[1]} tone="surface" />
+      <ContentSection block={blocks[1]!} tone="surface" />
       <Testimonials />
       <CtaBanner />
     </>

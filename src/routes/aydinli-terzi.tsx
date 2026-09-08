@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ContentSection } from "@/components/site/ContentSection";
+import { ContentSection, type ContentBlock } from "@/components/site/ContentSection";
 import { Services } from "@/components/site/Services";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CtaBanner } from "@/components/site/CtaBanner";
@@ -12,7 +12,7 @@ const DESCRIPTION =
 const KEYWORDS =
   "aydınlı terzi, tuzla terzi, aydınlı bayan terzi, tuzla aydınlı terzi, aydınlı kıyafet tadilatı, tuzla pantolon paça kısaltma, aydınlı terzi telefon";
 
-const blocks = [
+const blocks: ContentBlock[] = [
   {
     eyebrow: "Aydınlı Terzi",
     heading: "Aydınlı'da Yürüme Mesafesinde Terzi",
@@ -92,9 +92,9 @@ export const Route = createFileRoute("/aydinli-terzi")({
         title="Tuzla Aydınlı'da Terzi: Çiçek Terzi"
         description="Aydınlı, Nuray Sokağı'ndaki atölyemizde bay & bayan tadilat, onarım ve özel dikim yapıyoruz."
       />
-      <ContentSection block={blocks[0]} />
+      <ContentSection block={blocks[0]!} />
       <Services />
-      <ContentSection block={blocks[1]} tone="surface" />
+      <ContentSection block={blocks[1]!} tone="surface" />
       <Testimonials />
       <CtaBanner />
     </>

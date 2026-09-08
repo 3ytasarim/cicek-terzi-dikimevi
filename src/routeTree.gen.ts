@@ -10,16 +10,29 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AydinliTerziRouteImport } from './routes/aydinli-terzi'
+import { Route as BayanTerziRouteImport } from './routes/bayan-terzi'
 import { Route as GaleriRouteImport } from './routes/galeri'
 import { Route as HakkimizdaRouteImport } from './routes/hakkimizda'
 import { Route as HizmetlerRouteImport } from './routes/hizmetler'
 import { Route as IletisimRouteImport } from './routes/iletisim'
 import { Route as NasilCalisiyoruzRouteImport } from './routes/nasil-calisiyoruz'
+import { Route as OzelDikimRouteImport } from './routes/ozel-dikim'
 import { Route as SssRouteImport } from './routes/sss'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AydinliTerziRoute = AydinliTerziRouteImport.update({
+  id: '/aydinli-terzi',
+  path: '/aydinli-terzi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BayanTerziRoute = BayanTerziRouteImport.update({
+  id: '/bayan-terzi',
+  path: '/bayan-terzi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GaleriRoute = GaleriRouteImport.update({
@@ -47,6 +60,11 @@ const NasilCalisiyoruzRoute = NasilCalisiyoruzRouteImport.update({
   path: '/nasil-calisiyoruz',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OzelDikimRoute = OzelDikimRouteImport.update({
+  id: '/ozel-dikim',
+  path: '/ozel-dikim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SssRoute = SssRouteImport.update({
   id: '/sss',
   path: '/sss',
@@ -55,69 +73,90 @@ const SssRoute = SssRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aydinli-terzi': typeof AydinliTerziRoute
+  '/bayan-terzi': typeof BayanTerziRoute
   '/galeri': typeof GaleriRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/hizmetler': typeof HizmetlerRoute
   '/iletisim': typeof IletisimRoute
   '/nasil-calisiyoruz': typeof NasilCalisiyoruzRoute
+  '/ozel-dikim': typeof OzelDikimRoute
   '/sss': typeof SssRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aydinli-terzi': typeof AydinliTerziRoute
+  '/bayan-terzi': typeof BayanTerziRoute
   '/galeri': typeof GaleriRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/hizmetler': typeof HizmetlerRoute
   '/iletisim': typeof IletisimRoute
   '/nasil-calisiyoruz': typeof NasilCalisiyoruzRoute
+  '/ozel-dikim': typeof OzelDikimRoute
   '/sss': typeof SssRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aydinli-terzi': typeof AydinliTerziRoute
+  '/bayan-terzi': typeof BayanTerziRoute
   '/galeri': typeof GaleriRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/hizmetler': typeof HizmetlerRoute
   '/iletisim': typeof IletisimRoute
   '/nasil-calisiyoruz': typeof NasilCalisiyoruzRoute
+  '/ozel-dikim': typeof OzelDikimRoute
   '/sss': typeof SssRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aydinli-terzi'
+    | '/bayan-terzi'
     | '/galeri'
     | '/hakkimizda'
     | '/hizmetler'
     | '/iletisim'
     | '/nasil-calisiyoruz'
+    | '/ozel-dikim'
     | '/sss'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aydinli-terzi'
+    | '/bayan-terzi'
     | '/galeri'
     | '/hakkimizda'
     | '/hizmetler'
     | '/iletisim'
     | '/nasil-calisiyoruz'
+    | '/ozel-dikim'
     | '/sss'
   id:
     | '__root__'
     | '/'
+    | '/aydinli-terzi'
+    | '/bayan-terzi'
     | '/galeri'
     | '/hakkimizda'
     | '/hizmetler'
     | '/iletisim'
     | '/nasil-calisiyoruz'
+    | '/ozel-dikim'
     | '/sss'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AydinliTerziRoute: typeof AydinliTerziRoute
+  BayanTerziRoute: typeof BayanTerziRoute
   GaleriRoute: typeof GaleriRoute
   HakkimizdaRoute: typeof HakkimizdaRoute
   HizmetlerRoute: typeof HizmetlerRoute
   IletisimRoute: typeof IletisimRoute
   NasilCalisiyoruzRoute: typeof NasilCalisiyoruzRoute
+  OzelDikimRoute: typeof OzelDikimRoute
   SssRoute: typeof SssRoute
 }
 
@@ -128,6 +167,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aydinli-terzi': {
+      id: '/aydinli-terzi'
+      path: '/aydinli-terzi'
+      fullPath: '/aydinli-terzi'
+      preLoaderRoute: typeof AydinliTerziRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bayan-terzi': {
+      id: '/bayan-terzi'
+      path: '/bayan-terzi'
+      fullPath: '/bayan-terzi'
+      preLoaderRoute: typeof BayanTerziRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galeri': {
@@ -165,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NasilCalisiyoruzRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ozel-dikim': {
+      id: '/ozel-dikim'
+      path: '/ozel-dikim'
+      fullPath: '/ozel-dikim'
+      preLoaderRoute: typeof OzelDikimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sss': {
       id: '/sss'
       path: '/sss'
@@ -177,11 +237,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AydinliTerziRoute: AydinliTerziRoute,
+  BayanTerziRoute: BayanTerziRoute,
   GaleriRoute: GaleriRoute,
   HakkimizdaRoute: HakkimizdaRoute,
   HizmetlerRoute: HizmetlerRoute,
   IletisimRoute: IletisimRoute,
   NasilCalisiyoruzRoute: NasilCalisiyoruzRoute,
+  OzelDikimRoute: OzelDikimRoute,
   SssRoute: SssRoute,
 }
 export const routeTree = rootRouteImport

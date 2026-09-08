@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ContentSection } from "@/components/site/ContentSection";
+import { ContentSection, type ContentBlock } from "@/components/site/ContentSection";
 import { VideoGallery } from "@/components/site/VideoGallery";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CtaBanner } from "@/components/site/CtaBanner";
@@ -12,7 +12,7 @@ const DESCRIPTION =
 const KEYWORDS =
   "bayan terzi, abiye terzisi, bayan terzi Tuzla, abiye tadilatı, elbise daraltma, elbise boy kısaltma, gelinlik tadilatı Tuzla, kadın terzi Aydınlı";
 
-const blocks = [
+const blocks: ContentBlock[] = [
   {
     eyebrow: "Bayan Terzi",
     heading: "Elbise, Abiye ve Günlük Kıyafet Tadilatı",
@@ -89,9 +89,9 @@ export const Route = createFileRoute("/bayan-terzi")({
         title="Bayan Terzi & Abiye Terzisi"
         description="Elbise, abiye ve günlük kıyafetlerinizde özenli tadilat ve özel dikim."
       />
-      <ContentSection block={blocks[0]} />
+      <ContentSection block={blocks[0]!} />
       <VideoGallery limit={3} title="Atölyemizden Videolar" />
-      <ContentSection block={blocks[1]} tone="surface" />
+      <ContentSection block={blocks[1]!} tone="surface" />
       <Testimonials />
       <CtaBanner />
     </>
