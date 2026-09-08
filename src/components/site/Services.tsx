@@ -21,56 +21,48 @@ import imgOlcu from "@/assets/hizmet-olcu.jpg";
 
 const SERVICES = [
   {
-    no: "01",
     icon: Scissors,
     title: "Özel Dikim",
     text: "Bedeninize, tarzınıza ve kullanım amacınıza uygun kişiye özel dikim.",
     image: imgOzelDikim,
   },
   {
-    no: "02",
     icon: Ruler,
     title: "Pantolon Paçası & Kısaltma",
     text: "Pantolon ve diğer kıyafetlerde ölçünüze uygun profesyonel kısaltma işlemleri.",
     image: imgPaca,
   },
   {
-    no: "03",
     icon: Shapes,
     title: "Daraltma & Genişletme",
     text: "Kıyafetlerin formunu koruyarak bedeninize daha iyi oturmasını sağlıyoruz.",
     image: imgDaraltma,
   },
   {
-    no: "04",
     icon: Wrench,
     title: "Tadilat & Onarım",
     text: "Sökük, yırtık veya kullanıma bağlı hasarları özenli işçilikle yeniliyoruz.",
     image: imgTadilat,
   },
   {
-    no: "05",
     icon: Layers,
     title: "Fermuar Değişimi",
     text: "Pantolon, etek, elbise, mont ve benzeri ürünlerde fermuar değişimi ve onarımı.",
     image: imgFermuar,
   },
   {
-    no: "06",
     icon: Sparkles,
     title: "Elbise & Abiye Tadilatı",
     text: "Elbise ve özel gün kıyafetlerinde hassas ölçü, düzenleme ve tadilat.",
     image: imgAbiye,
   },
   {
-    no: "07",
     icon: Shirt,
     title: "Ceket & Takım Elbise Tadilatı",
     text: "Ceket ve takım elbiselerde beden uyumu, kol ve boy düzenlemeleri.",
     image: imgCeket,
   },
   {
-    no: "08",
     icon: PencilRuler,
     title: "Ölçüye Göre Düzenleme",
     text: "Kıyafetlerinizi vücut ölçülerinize uygun hale getiriyoruz.",
