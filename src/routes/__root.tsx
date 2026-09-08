@@ -77,6 +77,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Çiçek Terzi",
+  description:
+    "Tuzla Aydınlı'da bay & bayan özel dikim, kıyafet tadilatı ve onarım hizmetleri.",
+  telephone: "+90 534 952 17 59",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Aydınlı, Nuray Sokağı No:4 D:1",
+    addressLocality: "Tuzla",
+    addressRegion: "İstanbul",
+    postalCode: "34953",
+    addressCountry: "TR",
+  },
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -89,6 +106,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Çiçek Terzi; Tuzla Aydınlı'da özel dikim, kıyafet tadilatı ve onarım hizmetleri sunar.",
       },
       { name: "author", content: "Çiçek Terzi" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:site_name", content: "Çiçek Terzi" },
+      { property: "og:locale", content: "tr_TR" },
       { name: "theme-color", content: "#70003B" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -102,6 +122,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap",
       },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
     ],
   }),
 
