@@ -38,14 +38,14 @@ const ITEMS: Item[] = [
 export function FloatingTailorIcons() {
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 bottom-0 top-20 z-0 overflow-hidden sm:top-24"
+      className="pointer-events-none absolute inset-x-0 bottom-0 top-20 z-30 overflow-hidden sm:top-24"
       aria-hidden="true"
     >
 
       {ITEMS.map((item) => (
         <span
           key={item.url + item.left}
-          className="tailor-float absolute bottom-0 block bg-primary/30"
+          className="tailor-float absolute bottom-0 block bg-primary/45 sm:bg-primary/30"
           style={{
             left: `${item.left}%`,
             width: `${item.size}px`,
