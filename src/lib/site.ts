@@ -8,6 +8,9 @@ export const WHATSAPP_URL = `https://wa.me/905349521759?text=${encodeURIComponen
 export const PHONE_DISPLAY = "+90 534 952 17 59";
 export const PHONE_HREF = "tel:+905349521759";
 
+export const OPENING_HOURS_TEXT =
+  "Pazartesi - Cumartesi 09:00 - 19:00, Pazar kapalı";
+
 export const ADDRESS_LINE_1 = "Aydınlı, Nuray Sokağı No:4 D:1";
 export const ADDRESS_LINE_2 = "34953 Tuzla / İstanbul";
 
