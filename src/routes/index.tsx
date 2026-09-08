@@ -27,7 +27,20 @@ const localBusiness = {
     postalCode: "34953",
     addressCountry: "TR",
   },
-  areaServed: "Tuzla, İstanbul",
+  areaServed: ["Tuzla", "Aydınlı", "Şifa", "Postane", "İstanbul"],
+  makesOffer: [
+    "Özel dikim",
+    "Kıyafet tadilatı",
+    "Pantolon paçası kısaltma",
+    "Daraltma ve genişletme",
+    "Fermuar değişimi",
+    "Abiye ve elbise tadilatı",
+    "Ceket ve takım tadilatı",
+    "Ölçü alma ve prova",
+  ].map((name) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name, serviceType: name },
+  })),
 };
 
 export const Route = createFileRoute("/")({
