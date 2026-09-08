@@ -90,7 +90,7 @@ export function Services() {
 
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service, i) => (
-            <Reveal as="li" key={service.no} delay={i * 60}>
+            <Reveal as="li" key={service.title} delay={i * 60}>
               <article className="group relative h-full overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -102,9 +102,6 @@ export function Services() {
                     className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-                  <span className="absolute right-3 top-3 rounded-full bg-background/85 px-2.5 py-1 font-display text-xs tracking-wide text-primary backdrop-blur">
-                    {service.no}
-                  </span>
                   <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-500 group-hover:scale-110">
                     <service.icon className="h-5 w-5" aria-hidden="true" />
                   </span>
