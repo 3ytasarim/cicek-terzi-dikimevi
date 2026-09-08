@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppButton";
 
 import logo from "@/assets/logo.png";
@@ -7,6 +7,7 @@ import {
   ADDRESS_LINE_1,
   ADDRESS_LINE_2,
   NAV_LINKS,
+  OPENING_HOURS_TEXT,
   PHONE_DISPLAY,
   PHONE_HREF,
   WHATSAPP_URL,
@@ -43,7 +44,20 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-
+            {[
+              { label: "Aydınlı Terzi", to: "/aydinli-terzi" },
+              { label: "Özel Dikim", to: "/ozel-dikim" },
+              { label: "Bayan Terzi & Abiye", to: "/bayan-terzi" },
+            ].map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -55,6 +69,10 @@ export function Footer() {
               <a href={PHONE_HREF} className="truncate hover:text-primary">
                 {PHONE_DISPLAY}
               </a>
+            </li>
+            <li className="flex min-w-0 gap-2">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+              <span className="leading-relaxed">{OPENING_HOURS_TEXT}</span>
             </li>
             <li className="flex min-w-0 gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
