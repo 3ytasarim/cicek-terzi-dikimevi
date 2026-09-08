@@ -9,6 +9,8 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 const TITLE = "Çiçek Terzi | Tuzla Özel Dikim & Tadilat";
 const DESCRIPTION =
   "Çiçek Terzi; Tuzla Aydınlı'da özel dikim, kıyafet tadilatı, pantolon paçası, daraltma, fermuar değişimi ve elbise tadilatı hizmetleri sunar.";
+const KEYWORDS =
+  "terzi Tuzla, Tuzla terzi, Aydınlı terzi, özel dikim Tuzla, kıyafet tadilatı Tuzla, pantolon paça kısaltma, elbise daraltma, fermuar değişimi, abiye tadilatı, bay bayan terzi";
 
 const localBusiness = {
   "@context": "https://schema.org",
@@ -33,14 +35,19 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { name: "keywords", content: KEYWORDS },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:url", content: "/" },
+      { property: "og:locale", content: "tr_TR" },
+      { property: "og:site_name", content: "Çiçek Terzi" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "tr_TR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusiness) }],
   }),
   component: Index,
